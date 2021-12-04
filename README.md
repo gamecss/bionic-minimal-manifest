@@ -1,2 +1,2 @@
 # bionic-minimal-manifest
-The minimal manifest for compile bionic libc (working)
+Don't use this, this is WIP!
