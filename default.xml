@@ -3,7 +3,7 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
-  <default revision="ndk-r23b"
+  <default revision="master"
            remote="aosp"
            sync-j="4" />
   <project path="build/make" name="platform/build" groups="pdk" >
