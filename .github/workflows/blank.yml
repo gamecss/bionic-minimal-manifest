@@ -17,7 +17,7 @@ jobs:
       - name: Install repo
         run: |
           curl https://storage.googleapis.com/git-repo-downloads/repo | sudo tee /usr/bin/repo > /dev/null
-      
+          sudo chmod +x /usr/bin/repo
       - name: Get source
         run: |
           repo init -u git://github.com/gamecss/bionic-minimal-manifest.git -b main --depth=1
