@@ -11,14 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
+      - name: Install repo
+        run: |
+          sudo apt-get install repo
+      
       - name: Get source
-        uses: Javier-varez/google-repo-action@v0.2
-        with:
-          manifest-url: 'gamecss/bionic-minimal-manifest'
-          manifest-branch: 'main'
-          manifest-file: 'default.xml'
-          manifest-group: 'default'
-          checkout-deps: false
+        run: |
+          repo init -u git://github.com/gamecss/bionic-minimal-manifest.git -b main --depth=1
+          repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch --prune
 
       - name: Build
         run: |
