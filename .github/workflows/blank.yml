@@ -11,9 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2.3.1  
+        
       - name: Install repo
         run: |
-          sudo apt-get install repo
+          curl https://storage.googleapis.com/git-repo-downloads/repo | sudo tee /usr/bin/repo > /dev/null
       
       - name: Get source
         run: |
