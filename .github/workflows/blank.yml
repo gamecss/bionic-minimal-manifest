@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get source
+        uses: Javier-varez/google-repo-action@v0.2
+        with:
+          manifest-url: 'gamecss/bionic-minimal-manifest'
+          manifest-branch: 'main'
+          manifest-file: 'default.xml'
+          manifest-group: 'default'
+          checkout-deps: false
+
+      - name: Build
+        run: |
+          source build/envsetup.sh
+          lunch aosp_x86_64-eng
+          cd bionic
+          mm
