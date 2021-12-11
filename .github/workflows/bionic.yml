@@ -21,7 +21,7 @@ jobs:
       - name: Get source
         run: |
           repo init -u git://github.com/gamecss/bionic-minimal-manifest.git -b main --depth=1
-          repo sync -c -j32 --no-tags --no-clone-bundle --optimized-fetch --prune
+          repo sync -c -j64 --no-tags --no-clone-bundle --optimized-fetch --prune
 
       - name: Build
         run: |
