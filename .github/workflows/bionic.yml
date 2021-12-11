@@ -25,7 +25,7 @@ jobs:
 
       - name: Build
         run: |
-          source build/envysetup.sh
+          source build/envsetup.sh
           lunch aosp_x86_64-eng
           cd bionic
           mm
