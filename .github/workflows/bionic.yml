@@ -28,4 +28,5 @@ jobs:
           source build/envsetup.sh
           lunch aosp_x86_64-eng
           cd bionic
+          export ALLOW_MISSING_DEPENDENCIES=true
           mm
