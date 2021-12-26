@@ -3,7 +3,7 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
-  <default revision="refs/tags/platform-tools-31.0.3"
+  <default revision="refs/tags/android-11.0.0_r48"
            remote="aosp"
            sync-j="4" />
   <project path="build/make" name="platform/build" groups="pdk" >
@@ -22,9 +22,11 @@
   </project>
   <project path="art" name="platform/art" groups="pdk" />
   <project path="bionic" name="platform/bionic" groups="pdk" />
+  <!--
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
+  -->
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" />
   <project path="external/golang-protobuf" name="platform/external/golang-protobuf" groups="pdk" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
@@ -36,7 +38,11 @@
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="pdk,linux" clone-depth="1" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" groups="linux,pdk,tradefed" clone-depth="1" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" >
+    <linkfile src="current/androidx-README.md" dest="frameworks/support.md" />
+  </project>
   <project path="prebuilts/vndk/v28" name="platform/prebuilts/vndk/v28" groups="pdk" clone-depth="1" />
   <project path="prebuilts/vndk/v29" name="platform/prebuilts/vndk/v29" groups="pdk" clone-depth="1" />
   <project path="prebuilts/vndk/v30" name="platform/prebuilts/vndk/v30" groups="pdk" clone-depth="1" />
